@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Example 1",
+      "runtimeExecutable": "npx",
+      "runtimeVersion": "20",
+      "runtimeArgs": [
+        "ts-node",
+        "--transpile-only"
+      ],
+      "program": "${workspaceFolder}/example1.ts",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Example 2",
+      "runtimeExecutable": "npx",
+      "runtimeVersion": "20",
+      "runtimeArgs": [
+        "ts-node",
+        "--transpile-only"
+      ],
+      "program": "${workspaceFolder}/example2.ts",
+    }
+  ]
+}

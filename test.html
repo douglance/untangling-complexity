@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style>
+    #vis {
+      width: 100%;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="vis"></div>
+  <script type="text/javascript">
+    // create an array with nodes
+    var nodes = new vis.DataSet([
+      { id: 1, label: 'useArbTokenBridge', title: 'React Hook' },
+      { id: 2, label: 'TokenBridgeParams', title: 'Input' },
+      { id: 3, label: 'ArbTokenBridge', title: 'Output' },
+      { id: 4, label: 'useState', title: 'React Hook' },
+      { id: 5, label: 'useBalance', title: 'React Hook' },
+      { id: 6, label: 'useLocalStorage', title: 'React Hook' },
+      { id: 7, label: 'useEffect', title: 'React Hook' },
+      { id: 8, label: 'useTransactions', title: 'React Hook' },
+      { id: 9, label: 'useMemo', title: 'React Hook' },
+      { id: 10, label: 'EthBridger', title: 'Eth Operations' },
+      { id: 11, label: 'addTransaction', title: 'Transaction Function' },
+      { id: 12, label: 'withdrawEth', title: 'Function' },
+      { id: 13, label: 'addToken', title: 'Function' },
+      { id: 14, label: 'updateTokenData', title: 'Function' },
+      { id: 15, label: 'updateEthBalances', title: 'Function' },
+      { id: 16, label: 'triggerOutboxToken', title: 'Function' },
+      { id: 17, label: 'addL2NativeToken', title: 'Function' },
+      { id: 18, label: 'triggerOutboxEth', title: 'Function' },
+    ]);
+
+    // create an array with edges
+    var edges = new vis.DataSet([
+      { from: 1, to: 2, label: 'Accepts' },
+      { from: 1, to: 3, label: 'Returns' },
+      { from: 1, to: 4, label: 'Calls' },
+      { from: 1, to: 5, label: 'Calls' },
+      { from: 1, to: 6, label: 'Calls' },
+      { from: 1, to: 7, label: 'Calls' },
+      { from: 1, to: 8, label: 'Calls' },
+      { from: 1, to: 9, label: 'Calls' },
+      { from: 1, to: 11, label: 'Calls' },
+      { from: 1, to: 12, label: 'Calls' },
+      { from: 1, to: 13, label: 'Calls' },
+      { from: 1, to: 14, label: 'Calls' },
+      { from: 1, to: 15, label: 'Calls' },
+      { from: 1, to: 16, label: 'Calls' },
+      { from: 1, to: 17, label: 'Calls' },
+      { from: 1, to: 18, label: 'Calls' },
+      { from: 10, to: 11, label: 'Calls' },
+    ]);
+
+    // create a network
+    var container = document.getElementById('vis');
+    var data = {
+      nodes: nodes,
+      edges: edges
+    };
+    var options = {
+      interaction: { hover: true },
+      edges: { arrows: 'to' }
+    };
+    var network = new vis.Network(container, data, options);
+  </script>
+</body>
+
+</html>
